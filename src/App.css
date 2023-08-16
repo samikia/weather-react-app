@@ -36,3 +36,67 @@
     transform: rotate(360deg);
   }
 }
+body {
+  font-family: "Ubuntu", sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://images.pexels.com/photos/1431822/pexels-photo-1431822.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+}
+.btn-group {
+  margin-right: 5px;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+.wrapping {
+  border: 1px solid #dadde1;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 15px auto;
+  max-width: 600px;
+  background-color: rgba(0 0 0 / 10%);
+}
+.created {
+  text-align: center;
+  margin-top: -10px;
+  margin-right: 20rem;
+  font-weight: bold;
+}
+.weatherTemp .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+  font-size: small;
+}
+.col {
+  font-weight: bolder;
+  margin-top: 0;
+}
+ul li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+.forcastDays {
+  margin-bottom: 0px;
+  padding: 0px;
+  line-height: 38px;
+  list-style: none;
+  text-align: center;
+}
+#frsWeatherInfo li {
+  line-height: 35px;
+}
+#scdWeatherInfo li {
+  line-height: 35px;
+}
+#icon {
+  margin-top: -19px;
+  margin-left: -15px;
+}
+#temperature {
+  font-size: larger;
+}
