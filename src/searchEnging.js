@@ -231,7 +231,7 @@ export default function SearchEnging() {
         <span>
           <p>
             <span>
-              <a target="_blank" href="https://github.com/samikia/weatherApp">
+              <a target="_blank" href="https://github.com/samikia/weather-react-app">
                 open source code
               </a>
             </span>
