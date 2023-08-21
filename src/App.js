@@ -8,7 +8,7 @@ export default function App() {
     <div className="App">
       <div>
         <h1>Weather Search Engine</h1>
-        <SearchEnging />
+        <SearchEnging defaultCity="Paris"/>
       </div>
     </div>
   );
