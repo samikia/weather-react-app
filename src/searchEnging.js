@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
-
+import FormatDate from "./formatDate";
 import "./App.css";
 
 export default function SearchEnging(prop) {
@@ -15,6 +15,7 @@ export default function SearchEnging(prop) {
       loaded:true,
       temperature: response.data.main.temp,
       city: response.data.name,
+      date:new Date(response.data.dt*1000),
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
@@ -106,7 +107,8 @@ export default function SearchEnging(prop) {
                       <h3 id="city">{weather.city}</h3>
 
                       <ul className="weatherTemp">
-                        <li id="localTime">time:Wednesday 9:16</li>
+                        <li id="localTime"><FormatDate date={weather.date}/>
+                        </li>
                         <li>
                           <img src="" alt="" id="icon" />
                           <span id="temperature"></span>
