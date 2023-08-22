@@ -15,7 +15,7 @@ export default function Form() {
         description:response.data.weather[0].description,
         icon:`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     });
-    console.log(response.data);
+  
   }
 
   function handelSubmit(event) {
