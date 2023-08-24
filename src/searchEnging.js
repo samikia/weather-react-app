@@ -3,6 +3,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import WeatherInfo from "./weatherInfo";
+import WeatherForcast from "./weatherForcast";
 
 export default function SearchEnging(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -11,6 +12,7 @@ export default function SearchEnging(props) {
 
   function displayWeather(response) {
     setWeather({
+      coord:response.data.coord,
       loaded: true,
       temperature: response.data.main.temp,
       city: response.data.name,
@@ -18,8 +20,7 @@ export default function SearchEnging(props) {
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
       description: response.data.weather[0].description,
-      icon: response.data.weather[0].icon
-      
+      icon: response.data.weather[0].icon,
     });
 
     setCity();
@@ -109,175 +110,7 @@ export default function SearchEnging(props) {
                 </div>
                 <WeatherInfo data={weather} />
                 <div className="d-flex flex-row mb-3 text-center justify-content-around">
-                  <div className="p2">
-                    <div className="card h-100 rounded-pill">
-                      <div className="card-body">
-                        <h5
-                          className="card-title fw-semibold"
-                          id="weather-forcast-date"
-                        >
-                          thu
-                        </h5>
-                        <ul className="forcastDays">
-                          <li
-                            className="card-text"
-                            id="weather-forcast-tempratures"
-                          >
-                            <span className="weather-forcast-temp-max">
-                              10°
-                            </span>{" "}
-                            <span className="weather-forcast-temp-min">9°</span>
-                          </li>
-                          <li>
-                            <img
-                              src="http://openweathermap.org/img/wn/${
-                    forcastDay.weather[0].icon
-                  }@2x.png"
-                              width="42"
-                              alt=""
-                              id="icon"
-                            />
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p2">
-                    <div className="card h-100 rounded-pill">
-                      <div className="card-body">
-                        <h5
-                          className="card-title fw-semibold"
-                          id="weather-forcast-date"
-                        >
-                          Fri
-                        </h5>
-                        <ul className="forcastDays">
-                          <li
-                            className="card-text"
-                            id="weather-forcast-tempratures"
-                          >
-                            <span className="weather-forcast-temp-max">
-                              10°
-                            </span>
-                            <span className="weather-forcast-temp-min">8°</span>
-                          </li>
-                          <li>
-                            <img
-                              src="http://openweathermap.org/img/wn/${
-                    forcastDay.weather[0].icon
-                  }@2x.png"
-                              width="42"
-                              alt=""
-                              id="icon"
-                            />
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p2">
-                    <div className="card h-100 rounded-pill">
-                      <div className="card-body">
-                        <h5
-                          className="card-title fw-semibold"
-                          id="weather-forcast-date"
-                        >
-                          Sat
-                        </h5>
-                        <ul className="forcastDays">
-                          <li
-                            className="card-text"
-                            id="weather-forcast-tempratures"
-                          >
-                            <span className="weather-forcast-temp-max">
-                              15°
-                            </span>
-                            <span className="weather-forcast-temp-min">
-                              10°
-                            </span>
-                          </li>
-                          <li>
-                            <img
-                              src="http://openweathermap.org/img/wn/${
-                    forcastDay.weather[0].icon
-                  }@2x.png"
-                              width="42"
-                              alt=""
-                              id="icon"
-                            />
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p2">
-                    <div className="card h-100 rounded-pill">
-                      <div className="card-body">
-                        <h5
-                          className="card-title fw-semibold"
-                          id="weather-forcast-date"
-                        >
-                          Sun
-                        </h5>
-                        <ul className="forcastDays">
-                          <li
-                            className="card-text"
-                            id="weather-forcast-tempratures"
-                          >
-                            <span className="weather-forcast-temp-max">
-                              10°
-                            </span>
-                            <span className="weather-forcast-temp-min">4°</span>
-                          </li>
-                          <li>
-                            <img
-                              src="http://openweathermap.org/img/wn/${
-                    forcastDay.weather[0].icon
-                  }@2x.png"
-                              width="42"
-                              alt=""
-                              id="icon"
-                            />
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="p2">
-                    <div className="card h-100 rounded-pill">
-                      <div className="card-body">
-                        <h5
-                          className="card-title fw-semibold"
-                          id="weather-forcast-date"
-                        >
-                          Mon
-                        </h5>
-                        <ul className="forcastDays">
-                          <li
-                            className="card-text"
-                            id="weather-forcast-tempratures"
-                          >
-                            <span className="weather-forcast-temp-max">
-                              15°
-                            </span>
-                            <span className="weather-forcast-temp-min">
-                              12°
-                            </span>
-                          </li>
-                          <li>
-                            <img
-                              src="http://openweathermap.org/img/wn/${
-                    forcastDay.weather[0].icon
-                  }@2x.png"
-                              width="42"
-                              alt=""
-                              id="icon"
-                            />
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                 <WeatherForcast coords={weather.coord}/>
                 </div>
               </div>
             </div>
