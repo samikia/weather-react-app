@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import WeatherIcon from "./WeatherIcon";
@@ -7,20 +7,23 @@ export default function WeatherForcast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forcast, setForcast] = useState(null);
   function handelResponse(response) {
-    console.log(response);
+    
     setForcast(response.data.daily);
     setLoaded(true);
   }
+  useEffect(()=>{
+setLoaded(false)
+  },[props.coords])
   if (loaded) {
-    console.log(forcast);
+    
     return (
       <>
         {forcast.map((dailyForcast, index) => {
           if (index < 5) {
             return (
-              <div className="p2">
+              <div className="p2"key={index}>
                 <div className="card h-100 rounded-pill">
-                  <div className="card-body" key={index}>
+                  <div className="card-body" >
                     <WeatherForcastDay forcast={dailyForcast} />
                   </div>
                 </div>

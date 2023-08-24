@@ -46,28 +46,7 @@ export default function SearchEnging(props) {
           <div className="mask d-flex align-items-center h-100">
             <div className="container">
               <div className="wrapping">
-                <div className="d-flex flex-row mb-2 fw-bold ">
-                  <div className="p-2 ">
-                    <a href="#" className="text-black" id="Paris">
-                      Paris
-                    </a>
-                  </div>
-                  <div className=" p-2">
-                    <a href="#" className="text-black" id="Lisbon">
-                      Lisbon
-                    </a>
-                  </div>
-                  <div className=" p-2">
-                    <a href="#" className="text-black" id="Tokyo">
-                      Tokyo
-                    </a>
-                  </div>
-                  <div className="p-2">
-                    <a href="#" className="text-black" id="Oslo">
-                      Oslo
-                    </a>
-                  </div>
-                </div>
+               
                 <div>
                   <form
                     className="row g-3"
@@ -123,6 +102,7 @@ export default function SearchEnging(props) {
                 <a
                   target="_blank"
                   href="https://github.com/samikia/weather-react-app"
+                  rel="github"
                 >
                   open source code
                 </a>
